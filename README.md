@@ -20,7 +20,7 @@ Essa arquitetura é baseada na Clean Architecture proposta por Robert C. Martin 
 
    1. Presentation
       - A camada de apresentação é responsavel por lidar com a interface do usuário e apresentar os dados ao usuário final. Essa camada é dividida em duas partes principais View e ViewModel.
-   2. View
+   2. Screen
       - A camada View é a interface do usuário, que exibe informações e interações com o usuário. Ela é responsavel por receber eventros e repassá-los para a ViewModel correspondente, bem como exibir os dados fornecidos pela ViewModel. A view não deve conter lógica de negócio, apenas manipulação da interface do usuário. Ela pode ser implementeada utilizando tecnologias especificas, como um Fragment ou uma Activity no Android.
    3. ViewModel
       - A camada ViewModel é responsável por fornecer dados e comportamentos para a View. Ela atua como um intermediário entre a View e a camada de domínio. A ViewModel recebe os eventos da View, executa a lógica de negócio necessária e atualiza os dados que serão exibidos na View. Ela também pode fornecer comandos que são acionados pelas View para executar ações especificas. Na ViewModel não deve conter lógica de apresentação, como formatação de dados para exibição. Deve ser implementada como uma classe separada, geralmente usando ligação de dados utilizando o desing pattern LiveData para atualização dos estados presentes na View do usuário. Nesta camada iremos realizar a comunicação com os casos de uso presentes na camada de Domain.
