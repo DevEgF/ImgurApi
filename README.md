@@ -9,7 +9,7 @@ Este documento foi criado para dar uma visão de alto nível da solução técni
 Esse documento destina-se a equipe de avaliação.
 
 ## Funcionalidades
-1. **Listar imagens de gatos vindas da API Imgur :** Os usuários podem visualizar uma lista completa de imagens de gatos. Essa lista apenas imagens.
+1. **Listar imagens de gatos vindas da API Imgur :** Os usuários podem visualizar uma lista completa de imagens de gatos. Essa lista contém apenas imagens.
 
 2. **Cache de Dados para Utilização Offline:** O aplicativo utiliza um mecanismo de cache para armazenar as imagens dos animais. Isso permite que os usuários acessem as informações mesmo quando estão sem conexão com a internet. O cache garante uma experiência mais contínua e rápida, mesmo em condições de conectividade intermitente.
 
