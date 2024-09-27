@@ -41,7 +41,7 @@ fun GalleryScreen(viewModel: GetImageViewModel = getViewModel()) {
 @Composable
 fun ImageGrid(images: LazyPagingItems<Image>) {
     LazyVerticalGrid(
-        columns = GridCells.Fixed(3),
+        columns = GridCells.Fixed(4),
         modifier = Modifier.padding(16.dp)
     ) {
         items(images.itemCount) { index ->
