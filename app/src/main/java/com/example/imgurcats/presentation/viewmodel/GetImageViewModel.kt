@@ -16,7 +16,11 @@ class GetImageViewModel(
 ) : ViewModel() {
 
     val images: Flow<PagingData<Image>> = Pager(
-        config = PagingConfig(pageSize = 20, enablePlaceholders = false),
+        config = PagingConfig(pageSize = PAGE_SIZE, enablePlaceholders = false),
         pagingSourceFactory = { ImagePagingSource(repository) }
     ).flow.cachedIn(viewModelScope)
+
+    private companion object {
+        const val PAGE_SIZE = 20
+    }
 }

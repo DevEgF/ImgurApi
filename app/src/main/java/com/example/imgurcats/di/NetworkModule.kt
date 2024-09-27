@@ -1,5 +1,7 @@
 package com.example.imgurcats.di
 
+import com.example.imgurcats.utils.Constants.CLIENT_ID
+import com.example.imgurcats.utils.Constants.HEADER
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -23,7 +25,7 @@ val networkModule = module {
                 })
             }
             defaultRequest {
-                header("Authorization", "Client-ID 1ceddedc03a5d71")
+                header(HEADER, CLIENT_ID)
             }
         }
     }

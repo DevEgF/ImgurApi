@@ -4,6 +4,7 @@ import com.example.imgurcats.data.mapper.toImage
 import com.example.imgurcats.data.model.ImgurResponse
 import com.example.imgurcats.domain.model.Image
 import com.example.imgurcats.domain.repository.GetImageRepository
+import com.example.imgurcats.utils.Constants.BASE_URL
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
@@ -16,9 +17,9 @@ class GetImageRepositoryImpl(
 ) : GetImageRepository {
 
     override suspend fun getImages(page: Int): List<Image> {
-        val response: HttpResponse = client.get("https://api.imgur.com/3/gallery/search/") {
-            parameter("q", "cats")
-            parameter("page", page)
+        val response: HttpResponse = client.get(BASE_URL) {
+            parameter(PARAMS, QUERY_PARAM)
+            parameter(PAGE_PARAM, page)
         }
 
         if (response.status != HttpStatusCode.OK) {
@@ -30,5 +31,11 @@ class GetImageRepositoryImpl(
         return imgurResponse.data
             .mapNotNull { it.toImage() }
             .filter { image -> image.link.isNotBlank() }
+    }
+
+    private companion object {
+        const val QUERY_PARAM = "cats"
+        const val PAGE_PARAM = "page"
+        const val PARAMS = "q"
     }
 }
