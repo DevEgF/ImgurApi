@@ -17,7 +17,7 @@ class GetImageRepositoryImpl(
 ) : GetImageRepository {
 
     override suspend fun getImages(page: Int): List<Image> {
-        val response: HttpResponse = client.get(BASE_URL) {
+        val response: HttpResponse = client.get {
             parameter(PARAMS, QUERY_PARAM)
             parameter(PAGE_PARAM, page)
         }

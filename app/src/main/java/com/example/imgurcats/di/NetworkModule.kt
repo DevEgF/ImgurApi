@@ -1,5 +1,6 @@
 package com.example.imgurcats.di
 
+import com.example.imgurcats.utils.Constants.BASE_URL
 import com.example.imgurcats.utils.Constants.CLIENT_ID
 import com.example.imgurcats.utils.Constants.HEADER
 import io.ktor.client.HttpClient
@@ -25,6 +26,7 @@ val networkModule = module {
                 })
             }
             defaultRequest {
+                url(BASE_URL)
                 header(HEADER, CLIENT_ID)
             }
         }
